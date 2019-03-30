@@ -15,7 +15,8 @@ object gimenez {
 }
 
 object baigorria {
-	var sueldo=0
+	
+	var totalCobrado=0
 	
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
@@ -27,10 +28,10 @@ object baigorria {
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
 	
 	method cobrarSueldo() {
-		sueldo += self.sueldo()	
+		totalCobrado += self.sueldo()	
 	}
 	
-	method totalCobrado(){ return sueldo }
+	method totalCobrado(){ return totalCobrado }
 	
 }
 
