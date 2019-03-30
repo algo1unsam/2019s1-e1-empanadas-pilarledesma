@@ -7,7 +7,8 @@ object gimenez {
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
 
-// tenes que pensar que no se acumula el sueldo, pero tampoco hacer algo que no tenga sentido. Vale usar lo de la deuda?
+// tenes que pensar que no se acumula el sueldo, pero tampoco hacer algo que no tenga sentido. Vale usar lo de la deuda? SI
+//
 	
 	method cobrarSueldo() {
 		return sueldo
