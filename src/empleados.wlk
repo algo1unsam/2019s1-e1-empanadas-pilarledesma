@@ -18,9 +18,8 @@ object gimenez {
 
 	method gastar(cuanto){
 		
-		if (dinero <=0) {
-			deuda += dinero.abs()
-			dinero = 0} else dinero -= cuanto
+		if (dinero <=0) { deuda+=cuanto } 
+			else dinero -= cuanto
 	}
 	
 	method totalDeuda(){
