@@ -7,7 +7,6 @@ object gimenez {
 	var sueldo = 15000
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
-
 	
 	method cobrarSueldo() {
 		dinero += sueldo
