@@ -8,18 +8,21 @@ object gimenez {
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
 
-// tenes que pensar que no se acumula el sueldo, pero tampoco hacer algo que no tenga sentido. Vale usar lo de la deuda? SI
-//
 	
 	method cobrarSueldo() {
 		dinero += sueldo
-		if (deuda !== 0 && dinero >= deuda){self.pagarDeuda()}
+		if (deuda !== 0){self.pagarDeuda()}
 	}
 
 	method gastar(cuanto){
 		
-		if (dinero <=0) { deuda+=cuanto } 
-			else dinero -= cuanto
+		if (dinero <= cuanto) { 
+			
+			deuda += (cuanto - dinero).abs()
+			dinero -= (cuanto - deuda).abs()
+			if (dinero<0){dinero=0}
+		} 
+				else dinero -= cuanto
 	}
 	
 	method totalDeuda(){
@@ -31,13 +34,15 @@ object gimenez {
 	}
 
 	method pagarDeuda(){
-		//Esto esta como el orto
 		
-		deuda = (deuda - dinero).abs()
-		dinero -= deuda
-		
+		if (dinero>=deuda) {
+			dinero-=deuda
+			deuda=0
+			} else {
+				deuda-=dinero
+				dinero=0
+			}
 	}
-		
 
 }
 
