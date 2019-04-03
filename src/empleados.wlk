@@ -2,7 +2,8 @@ object gimenez {
 	// la linea que sigue es equivalente a todo lo que está debajo.
 	// le agrega al objeto: un atributo, el método para acceder, y el método para modificar.
 //	var property sueldo = 15000
-
+	var dinero=0
+	var deuda=0
 	var sueldo = 15000
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
@@ -11,8 +12,23 @@ object gimenez {
 //
 	
 	method cobrarSueldo() {
-		return sueldo
-}
+		dinero += sueldo
+	}
+
+	method gastar(cuanto){
+		dinero -= cuanto
+	}
+	
+	method totalDeuda(){
+		
+	}
+	
+	method totalDinero(){
+		
+	}
+
+
+
 }
 
 object baigorria {
@@ -27,6 +43,7 @@ object baigorria {
 	}
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
+	//Esto probalo a ver si hay que agregarle un return o no
 	
 	method cobrarSueldo() {
 		totalCobrado += self.sueldo()	
@@ -38,6 +55,7 @@ object baigorria {
 
 object galvan {
 	var dinero = 300000
+	
 	method dinero() { return dinero }
 	
 	method pagarA(empleado) {
