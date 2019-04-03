@@ -17,14 +17,17 @@ object gimenez {
 
 	method gastar(cuanto){
 		dinero -= cuanto
+		if (dinero <=0) {
+			deuda = dinero.abs()
+			dinero = 0}
 	}
 	
 	method totalDeuda(){
-		
+		return deuda
 	}
 	
 	method totalDinero(){
-		
+		return dinero
 	}
 
 
