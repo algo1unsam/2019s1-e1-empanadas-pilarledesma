@@ -17,23 +17,26 @@ object gimenez {
 	}
 
 	method gastar(cuanto){
-		dinero -= cuanto
+		
 		if (dinero <=0) {
 			deuda += dinero.abs()
-			dinero = 0}
+			dinero = 0} else dinero -= cuanto
 	}
 	
 	method totalDeuda(){
 		return deuda
 	}
 	
-	method totalDinero(){
+	method totalDinero(){ 
 		return dinero
 	}
 
 	method pagarDeuda(){
-		deuda -= (dinero - deuda).abs()
+		//Esto esta como el orto
+		
+		deuda = (deuda - dinero).abs()
 		dinero -= deuda
+		
 	}
 		
 
