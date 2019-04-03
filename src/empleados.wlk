@@ -13,12 +13,13 @@ object gimenez {
 	
 	method cobrarSueldo() {
 		dinero += sueldo
+		if (deuda !== 0 && dinero >= deuda){self.pagarDeuda()}
 	}
 
 	method gastar(cuanto){
 		dinero -= cuanto
 		if (dinero <=0) {
-			deuda = dinero.abs()
+			deuda += dinero.abs()
 			dinero = 0}
 	}
 	
@@ -30,7 +31,11 @@ object gimenez {
 		return dinero
 	}
 
-
+	method pagarDeuda(){
+		deuda -= (dinero - deuda).abs()
+		dinero -= deuda
+	}
+		
 
 }
 
